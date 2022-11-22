@@ -1,6 +1,6 @@
 ---
-title: "Your Project Title"
-author: "project team members"
+title: "Life vs. Air"
+author: "Corey, Jameson, Soro"
 date: "1/22/2022"
 output: html_document
 ---
