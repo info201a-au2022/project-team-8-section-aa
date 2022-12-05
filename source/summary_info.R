@@ -44,4 +44,10 @@ View(air_pollution_no_cities_no_duups)
 life_expectancy_2015 <- life_expectancy %>%
   filter(Year == "2015")
 
+life_expectancy_2015_semiclean <- life_expectancy_2015[,-6:-17]
+life_expectancy_2015_clean <- life_expectancy_2015_semiclean[,-7:-10]
+
+#The Key Dataframe that has the AQI and Life Expectancy of Countries 2015
+air_pollution_life_expect <- merge(life_expectancy_2015_clean, air_pollution_no_cities_no_duups, by=c("Country"))
+
 
