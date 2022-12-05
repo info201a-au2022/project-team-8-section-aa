@@ -7,6 +7,7 @@ air_pollution_no_cities <- air_pollution_countries2[,-2]
 air_pollution_no_cities_no_duups <- air_pollution_no_cities[!duplicated(air_pollution_no_cities$Country),]
 View(air_pollution_no_cities_no_duups)
 
+View(air_pollution_countries2)
 View(air_pollution_no_cities_no_duups)
 group__unhealthy_countries <- air_pollution_no_cities_no_duups %>% 
   select('Country', 'AQI.Category') %>% 
