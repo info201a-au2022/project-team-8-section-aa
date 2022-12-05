@@ -50,4 +50,4 @@ life_expectancy_2015_clean <- life_expectancy_2015_semiclean[,-7:-10]
 #The Key Dataframe that has the AQI and Life Expectancy of Countries 2015
 air_pollution_life_expect <- merge(life_expectancy_2015_clean, air_pollution_no_cities_no_duups, by=c("Country"))
 
-
+write.csv(air_pollution_life_expect, "../air pollution life expectancy.csv", row.names = TRUE)
