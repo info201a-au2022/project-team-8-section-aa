@@ -23,3 +23,4 @@ AQIbar <- ggplotly(ggplot(data=grouped_aqi_category2, aes(x=AQI.Category, y=aver
          theme_minimal()
 
 print(AQIbar)
+write.csv(grouped_aqi_category2, "../data/grouped_aqi_category2.csv", row.names = TRUE)

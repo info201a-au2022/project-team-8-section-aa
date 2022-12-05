@@ -28,3 +28,5 @@ AQI_map <- ggplotly(ggplot(airmapdf2,aes(x=long, y=lat, group = group)) +
            scale_fill_viridis_c(option = 'C'))
 print(AQI_map)
 View(airmapdf2)
+
+write.csv(airmapdf2, "../data/airpollmap.csv", row.names = TRUE)
