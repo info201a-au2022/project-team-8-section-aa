@@ -14,9 +14,17 @@ ggplot(air_pollution_life_expect, aes(x=AQI.Value, y=Life.expectancy)) +
 #label points 
 sp <- ggplot(air_pollution_life_expect, aes(x=AQI.Value, y=Life.expectancy)) + 
   geom_point() +
-  geom_text(label = air_pollution_life_expect$Country) + 
+  geom_text_repel(aes(label = air_pollution_life_expect$Country)) + 
   labs(
     x = "AQI Value",
     y = "Life Expectancy",
     title = "Life Expectancy in Relation to AQI Value"
   )
+ggplotly(ggplot(air_pollution_life_expect, aes(x=AQI.Value, y=Life.expectancy, label=Country)) + 
+           geom_point() +
+           labs(
+             x = "AQI Value",
+             y = "Life Expectancy",
+             title = "Life Expectancy in Relation to AQI Value"
+           ))
+print(sp)
