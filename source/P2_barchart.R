@@ -1,4 +1,4 @@
-# P2 Bar Graph
+# P2 Bar Graph B.4
 library(ggplot2)
 library(dplyr)
 air_pollution_life_expect <- read.csv("../data/air pollution life expectancy.csv")

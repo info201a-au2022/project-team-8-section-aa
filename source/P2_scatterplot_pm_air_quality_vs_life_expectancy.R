@@ -1,4 +1,4 @@
-#P2 Linear Regression Scatterplot 2 PM2.5
+#P2 Linear Regression Scatterplot 2 PM2.5 B.6
 library(tidyverse)
 library(dplyr)
 library(ggplot2)

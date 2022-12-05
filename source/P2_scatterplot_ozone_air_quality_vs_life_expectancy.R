@@ -1,4 +1,4 @@
-# P2 Scatterplot AQI and Life Expectancy
+# P2 Scatterplot Ozone AQI and Life Expectancy B.7
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
