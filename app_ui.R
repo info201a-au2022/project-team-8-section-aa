@@ -13,7 +13,7 @@ intro_panel <- tabPanel(
   "Introduction",
   titlePanel("The Effects of Air Pollution on Life Expectancy"),
   mainPanel(
-    includeMarkdown('./docs/Introduction_Markdown.md')
+    includeMarkdown('./project-team-8-section-aa/docs/Introduction_Markdown.md')
   )
 )
 
