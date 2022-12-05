@@ -12,19 +12,11 @@ air_pollution_life_expect <- read.csv("../data/air pollution life expectancy.csv
 ggplot(air_pollution_life_expect, aes(x=AQI.Value, y=Life.expectancy)) +
   geom_point(size=2, shape=23)
 #label points 
-sp <- ggplot(air_pollution_life_expect, aes(x=AQI.Value, y=Life.expectancy)) + 
-  geom_point() +
-  geom_text_repel(aes(label = air_pollution_life_expect$Country)) + 
-  labs(
-    x = "AQI Value",
-    y = "Life Expectancy",
-    title = "Life Expectancy in Relation to AQI Value"
-  )
-ggplotly(ggplot(air_pollution_life_expect, aes(x=AQI.Value, y=Life.expectancy, label=Country)) + 
+sp_aqi <- ggplotly(ggplot(air_pollution_life_expect, aes(x=AQI.Value, y=Life.expectancy, label=Country)) + 
            geom_point() +
            labs(
              x = "AQI Value",
              y = "Life Expectancy",
              title = "Life Expectancy in Relation to AQI Value"
            ))
-print(sp)
+print(sp_aqi)

@@ -13,11 +13,7 @@ grouped_aqi_category <- group_by(air_pollution_life_expect, AQI.Category) %>%
 grouped_aqi_category2 <- grouped_aqi_category[-2,]
 
 #code for the bar chart
-AQIbar <- ggplot(data=grouped_aqi_category2, aes(x=AQI.Category, y=averagelife_expectancy)) +
-  geom_bar(stat="identity", fill="steelblue")+
-  theme_minimal()
-
-ggplotly(ggplot(data=grouped_aqi_category2, aes(x=AQI.Category, y=averagelife_expectancy)) +
+AQIbar <- ggplotly(ggplot(data=grouped_aqi_category2, aes(x=AQI.Category, y=averagelife_expectancy)) +
          geom_bar(stat="identity", fill="steelblue")+
            labs(
              x = "AQI Category",

@@ -1,7 +1,7 @@
 ---
 title: "Life vs. Air"
 author: "Corey, Jameson, Soro"
-date: "11/22/2022"
+date: "12/4/2022"
 output: html_document
 ---
 
@@ -12,46 +12,82 @@ library(dplyr)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## What is this file for?
-
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
-
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
-```{r}
-# Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and 
-# then "source" an R file (data_access.R)
-source("../source/data_access.R")
-data_access_test()
+<!-- Dynamic Paragraph -->
+<!-- Source variables -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+source("../source/summary_info.R")
 ```
 
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-msg <- data_access_test(" Morgan!")
+<!-- Write Paragraph -->
+Over the years, air pollution has been on the rise because of human activity and in some countries you even see people protecting themselves from pollutants that pose health risks. As time goes on this problem will only get worse and the potential for serious detriments to health warrant a deeper look into the relationship between air quality and life expectancy. Through our research we wanted to explore if there is any quantifiable relationship between the quality of air and to a Country's life expectancy. We used parameters to represent air quality including AQI along with PM2.5 and levels of the Ozone. We found that the country with the longest life expectancy for 2015 was, `r summary_info$best_life_expectancy`, but the country with the highest air quality was, `r summary_info$best_air_country`. Some other key values that we found is the country that had the highest PM2.5 and Ozone rating were `r summary_info$highest_pm2.5` and `r highest_ozone` respectively. 
+
+<!-- Table -->
+<!-- Source table -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+source("../source/table_of_summary_info_air_quality.R")
 ```
 
-> `r msg` Hope you have a good day!! 
-
-## ABOUT THIS FILE: 
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+<!-- Render table -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+kable(summaryinfo, align = 'c')
 ```
 
-## Including Plots
+<!-- Short description -->
+This table shows all the values that we used to analyze the pollutants in the air vs. life expectancy. The table includes the country, the AQI value, and the corresponding categorization, the PM2.5 value, and the Ozone value. From this table we tried to find general comparisons between the general AQI and other pollutants. AQI being a generalization for how hazardous the air is to breath. 
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+<!-- Five charts -->
+<!-- Source chart 1 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+source("../source/P2_barchart.R")
+```
+<!-- Render chart 1 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+AQIbar
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+<!-- Short description of chart 1 -->
+This bar chart shows the average life expectancy within each AQI category. To do this we grouped the data by the AQI category, then took the life expectancy values within that category and averaged them together. The four categories in order from better air quality to worse are, Good, Moderate, Unhealthy for Sensitive Groups, and Unhealthy. 
+
+<!-- Source chart 2 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+source("../source/P2_scatterplot_air_quality_vs_life_expectancy.R")
+```
+<!-- Render chart 2 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+sp_aqi
+```
+ <!-- Short description of chart 2 -->
+ This chart shows the plotted points for each country in our dataset with the AQI value on the x-axis and the life expectancy on y-axis. The linear regression of these points show that the line of best fit, life expectancy (y) = -0.01065 AQI value (x) + 72.415 and had a multiple R-squared value of 0.0038. This is showing that there is a negative relationship between AQI value and life expectancy based on this data, which is expected, but the R-squared value is very low, meaning that the correlation is not strong. 
+
+<!-- Source chart 3 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+source("../source/P2_scatterplot_pm_air_quality_vs_life_expectancy.R")
+```
+<!-- Render chart 3 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+sp_pm_le
+```
+ <!-- Short description of chart 3 -->
+ This chart shows the plotted points for each country in our dataset with the PM2.5 AQI value on the x-axis and the life expectancy on y-axis. The linear regression of these points show that the line of best fit, life expectancy (y) = -0.01385* PM2.5 AQI value (x) + 72.623 and had a multiple R-squared value of 0.00684. This is showing that there is a negative relationship between PM2.5 AQI value and life expectancy based on this data, which is also expected, but again, the R-squared value is very low, meaning that the correlation is not strong. 
+ 
+<!-- Source chart 4 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+source("../source/P2_scatterplot_ozone_air_quality_vs_life_expectancy.R")
+```
+<!-- Render chart 4 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+sp_oz_le
+```
+ <!-- Short description of chart 4 -->
+ This chart shows the plotted points for each country in our dataset with the Ozone AQI value on the x-axis and the life expectancy on y-axis. The linear regression of these points show that the line of best fit, life expectancy (y) = -0.07938* Ozone AQI value (x) + 69.164 and had a multiple R-squared value of 0.044. This is showing that there is a positive relationship between higher Ozone AQI values and life expectancy. This is not expected, because it is showing that as the Ozone AQI value goes up (air quality gets worse), the life expectancy also goes up. This may be because of the very low R-squared value that shows low correlation between the two values. 
+
+<!-- Source chart 5 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+source("../source/P2-map_air_quality.R")
+```
+<!-- Render chart 5 -->
+```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
+AQI_map
+```
+ <!-- Short description of chart 5 -->
+This map displays the various AQI values, yellow being the highest AQI value representing very unhealthy air quality, purple being the lower AQI values, representing healthier air quality. The countries that are filled in with gray are the result of NA values from our dataset. This map is meant to show which countries have higher and lower AQI values.
