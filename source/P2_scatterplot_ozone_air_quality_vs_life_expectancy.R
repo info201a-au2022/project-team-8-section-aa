@@ -3,6 +3,7 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2)
 library(ggrepel)
+library(plotly)
 set.seed(42)
 air_pollution_life_expect <- read.csv("../project-team-8-section-aa/data/air pollution life expectancy.csv")
 
@@ -14,7 +15,6 @@ sp_oz_le <- ggplotly(ggplot(air_pollution_life_expect, aes(x=Ozone.AQI.Value, y=
                        y = "Life Expectancy",
                        title = "Life Expectancy in Relation to the Ozone AQI Value"
                      ))
-print(sp_oz_le)
 
 
 

@@ -13,5 +13,7 @@ source('../project-team-8-section-aa/source/P2_scatterplot_air_quality_vs_life_e
 source('../project-team-8-section-aa/source/P2_scatterplot_ozone_air_quality_vs_life_expectancy.R')
 source('../project-team-8-section-aa/source/P2_scatterplot_pm_air_quality_vs_life_expectancy.R')
 source('../project-team-8-section-aa/source/P2-map_air_quality.R')
+source('../project-team-8-section-aa/source/P2-map_pm_air_quality.R')
+source('../project-team-8-section-aa/source/P2-map_oz_air_quality.R')
 
 shinyApp(ui = ui, server = server)

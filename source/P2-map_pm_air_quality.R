@@ -1,4 +1,4 @@
-#Making the Map for P2 B.8
+#Making the Map for P2 B.9
 library(tidyverse)
 library(ggplot2)
 library(maps)
@@ -18,12 +18,11 @@ airmapdf <- left_join(map_data('world'), air_df)
 
 airmapdf2 <- airmapdf[,-6, -7]
 
-AQI_map <- ggplotly(ggplot(airmapdf2,aes(x=long, y=lat, group = group, label=region)) +
-           geom_polygon(aes(fill = AQI.Value), color = "purple") +
-           scale_fill_viridis_c(option = 'C') +
-           labs(
-             title = "AQI Values on Global Map"
-           ))
-
-print(AQI_map)
+PM2.5AQI_map <- ggplotly(ggplot(airmapdf2,aes(x=long, y=lat, group = group, label=region)) +
+                      geom_polygon(aes(fill = PM2.5.AQI.Value), color = "lightblue") +
+                      scale_fill_viridis_c(option = 'C') +
+                        labs(
+                          title = "PM2.5 AQI Values on Global Map"
+                        ))
+                      
 

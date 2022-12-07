@@ -20,21 +20,12 @@ intro_panel <- tabPanel(
 
 # This is where the code starts for the first interactive panel
 graph1_input <- selectInput(
-  inputId = "var_p1",
-  label = "Select A Parameter for Air Quality",
-  choices = sp_aqi, if(selected == "AQI Value"){
-    print(sp_aqi)
-  },
-    if(selected == "PM2.5 AQI Value"){
-      print(sp_pm_le)
-    },
-  if(selected == "Ozone"){
-    print(sp_oz_le)
-  }
-  
+  inputId = "radio",
+  label = "Select An AQI Category",
+  choices = c("AQI Value", "PM2.5 Value", "Ozone"))
   # to do
   selected = "AQI Value"
-)
+
 
 first_int_sidebar_content <- sidebarPanel(
   graph1_input,
@@ -53,7 +44,7 @@ first_int_sidebar_content <- sidebarPanel(
 )
 
 first_int_main_content <- mainPanel(
-  plotlyOutput("plot1")
+  plotlyOutput("scatter")
 )
 
 first_int_panel <- tabPanel(
@@ -103,11 +94,11 @@ second_int_panel <- tabPanel(
 # This is where the code starts for the third interactive panel
 graph3_input <- selectInput(
   inputId = "var_p3",
-  label = "Select A Country",
-  choices = c(unique(airmapdf2["region"])),
-  # to do
-  selected = "Afghanistan"
-)
+  label = "Select An AQI Category",
+  choices = c("AQI Value", "PM2.5 Value", "Ozone"))
+# to do
+selected = "AQI Value"
+
 
 third_int_sidebar_content <- sidebarPanel(
   graph3_input,
@@ -118,7 +109,7 @@ third_int_sidebar_content <- sidebarPanel(
 )
 
 third_int_main_content <- mainPanel(
-  plotlyOutput("plot3")
+  plotlyOutput("plot_3")
 )
 
 third_int_panel <- tabPanel(
@@ -139,23 +130,27 @@ summary_main_content <- mainPanel(
   print("Our first takeaway is that the relationship defined by the linear regression of the data is very hard to draw conclusions
         from given that the correlation is low. You can also see this in the scatter plots in a way you cannot discern any noticable patterns."),
   p(" "),
-  plotlyOutput("P2_scatterplot_air_quality_vs_life_expectancy"),
+  plotlyOutput("aqi"),
   p(" "),
-  plotlyOutput("P2_scatterplot_pm_air_quality_vs_life_expectancy"),
+  plotlyOutput("pmaqi"),
   p(" "),
-  plotlyOutput("P2_scatterplot_ozone_air_quality_vs_life_expectancy"),
+  plotlyOutput("ozaqi"),
   h3("AQI Categories"),
   print("If you look at all four averages that we included within the bar graph, you can see that in general, the life expectancy lowers with a lower quality of air.
         This is not always true though since we can see that the life expectancy for the Unhealthy for Sensitive Groups is lower than the Unhealthy category which
         represents a worse air quality. Again we see that the relationship has little correlation and does not take into account the many variables that influence life expectancy of a country."),
   p(" "),
-  plotlyOutput("P2_barchart"),
+  plotlyOutput("aqibar"),
   h3("Map of AQI"),
   print("From the map the most obvious takeaways are the colors that stand out the most in the extremity of the scale, showing a general state of how many unhealthy AQI values countries have.
         For example India and Mexico is showing up as a brighter yellow than other countries, meaning that is has one of the worst air qualities. On the other hand it also shows countries with
         the lowest AQI values depicted in a dark purple. For example, Canada, Argentina, and Australia."),
   p(" "),
-  plotlyOutput("P2-map_air_quality"),
+  plotlyOutput("map1"),
+  p(" "),
+  plotlyOutput("map2"),
+  p(" "),
+  plotlyOutput("map3"),
   h3("Assumptions"),
   print("Some key assumptions that we need to recognize in order to understand where some error may have neen introduced into our analysis, is that the data is from 2015 and only this year which may not accruately represent how air pollution has affected life expectancy over time.
         As well as the pollutant data was taken from different cities within countries which didn't allow us to merge both the life expectancy and air pollution data frames together, only taking the highest AQI values that were recorded within each country, only represent these given cities and aren't fully represented of the whole country.")
@@ -172,7 +167,7 @@ report_panel <- tabPanel(
   "Report Panel",
   titlePanel("Report Panel"),
   mainPanel(
-    includeMarkdown('./project-team-8-section-aa/docs/Summary_Markdown.md')
+    includeMarkdown('../project-team-8-section-aa/docs/Summary_Markdown.md')
   )
 )
 
@@ -184,5 +179,4 @@ ui <- navbarPage(
   second_int_panel,
   third_int_panel,
   summary_panel,
-  report_panel
 )

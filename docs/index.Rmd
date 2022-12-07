@@ -14,8 +14,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- Dynamic Paragraph -->
 <!-- Source variables -->
-```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
-source("../project-team-8-section-aa/source/summary_info.R")
+```{r, include = FALSE}
+source("../summary_info.R")
 ```
 
 <!-- Write Paragraph -->
@@ -83,7 +83,7 @@ sp_oz_le
 
 <!-- Source chart 5 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
-source("../project-team-8-section-aa/source/P2-map_air_quality.R")
+source("../source/P2-map_air_quality.R")
 ```
 <!-- Render chart 5 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}

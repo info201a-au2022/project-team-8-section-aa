@@ -1,10 +1,15 @@
 <center>
 
-![Picture of Taj Mahal in smog due to air pollution](https://raw.githubusercontent.com/info201a-au2022/project-group-8-section-aa/docs/smog-taj-mahal.jpg)
+![Picture of Taj Mahal in smog due to air pollution](https://raw.githubusercontent.com/info201a-au2022/project-team-8-section-aa/main/docs/smog-taj-mahal.jpg)
 
 [*Image Citation*](https://www.cnn.com/travel/article/taj-mahal-air-purifier-intl-scli-hnk/index.html)
 
 </center>
+
+## Authors
+- Corey Chu (chuco7@uw.edu)
+- Jameson Smith (jjack11@uw.edu)
+- Soro Kim (sorokim@uw.edu)
 
 ## The Problem
 Air pollution is posing increasing risks on the health of the residents who live with it
