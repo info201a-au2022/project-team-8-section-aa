@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- Dynamic Paragraph -->
 <!-- Source variables -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
-source("../source/summary_info.R")
+source("../project-team-8-section-aa/source/summary_info.R")
 ```
 
 <!-- Write Paragraph -->
@@ -24,7 +24,7 @@ Over the years, air pollution has been on the rise because of human activity and
 <!-- Table -->
 <!-- Source table -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
-source("../source/table_of_summary_info_air_quality.R")
+source("../project-team-8-section-aa/source/table_of_summary_info_air_quality.R")
 ```
 
 <!-- Render table -->
@@ -38,7 +38,7 @@ This table shows all the values that we used to analyze the pollutants in the ai
 <!-- Five charts -->
 <!-- Source chart 1 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
-source("../source/P2_barchart.R")
+source("../project-team-8-section-aa/source/P2_barchart.R")
 ```
 <!-- Render chart 1 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
@@ -50,7 +50,7 @@ This bar chart shows the average life expectancy within each AQI category. To do
 
 <!-- Source chart 2 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
-source("../source/P2_scatterplot_air_quality_vs_life_expectancy.R")
+source("../project-team-8-section-aa/source/P2_scatterplot_air_quality_vs_life_expectancy.R")
 ```
 <!-- Render chart 2 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
@@ -61,7 +61,7 @@ sp_aqi
 
 <!-- Source chart 3 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
-source("../source/P2_scatterplot_pm_air_quality_vs_life_expectancy.R")
+source("../project-team-8-section-aa/source/P2_scatterplot_pm_air_quality_vs_life_expectancy.R")
 ```
 <!-- Render chart 3 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
@@ -72,7 +72,7 @@ sp_pm_le
  
 <!-- Source chart 4 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
-source("../source/P2_scatterplot_ozone_air_quality_vs_life_expectancy.R")
+source("../project-team-8-section-aa/source/P2_scatterplot_ozone_air_quality_vs_life_expectancy.R")
 ```
 <!-- Render chart 4 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
@@ -83,7 +83,7 @@ sp_oz_le
 
 <!-- Source chart 5 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}
-source("../source/P2-map_air_quality.R")
+source("../project-team-8-section-aa/source/P2-map_air_quality.R")
 ```
 <!-- Render chart 5 -->
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, results='hide'}

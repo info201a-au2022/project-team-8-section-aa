@@ -7,13 +7,13 @@ library(plotly)
 library(dplyr)
 
 #Data frame for scatterplots
-air_pollution_life_expect <- read.csv("../data/air pollution life expectancy.csv")
+air_pollution_life_expect <- read.csv("../project-team-8-section-aa/data/air pollution life expectancy.csv")
 
 #Data frame for bar graph 
-grouped_aqi_category3 <- read.csv("../data/grouped_aqi_category2.csv")
+grouped_aqi_category3 <- read.csv("../project-team-8-section-aa/data/grouped_aqi_category2.csv")
   
 #Data frame for map
-airmapdf2 <- read.csv("../data/airpollmap.csv")
+airmapdf2 <- read.csv("../project-team-8-section-aa/data/airpollmap.csv")
 
 #choices = c(unique(airdf2["region"]))
 

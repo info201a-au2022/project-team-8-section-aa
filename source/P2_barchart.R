@@ -1,7 +1,7 @@
 # P2 Bar Graph B.4
 library(ggplot2)
 library(dplyr)
-air_pollution_life_expect <- read.csv("../data/air pollution life expectancy.csv")
+air_pollution_life_expect <- read.csv("../project-team-8-section-aa/data/air pollution life expectancy.csv")
 
 #grouped aqi category life expectancy
 grouped_aqi_category <- group_by(air_pollution_life_expect, AQI.Category) %>%
@@ -22,5 +22,6 @@ AQIbar <- ggplotly(ggplot(data=grouped_aqi_category2, aes(x=AQI.Category, y=aver
            ))
          theme_minimal()
 
-print(AQIbar)
+         print(AQIbar)
+View(grouped_aqi_category2)
 write.csv(grouped_aqi_category2, "../data/grouped_aqi_category2.csv", row.names = TRUE)

@@ -7,7 +7,7 @@ library(maps)
 world_coordinates <- map_data("world")
 
 #importing the data of the life expectancy and the air quality
-air_pollution_life_expect <- read.csv("../data/air pollution life expectancy.csv")
+air_pollution_life_expect <- read.csv("../project-team-8-section-aa/data/air pollution life expectancy.csv")
 view(air_pollution_life_expect)
 #create the world map with ggplot()
 

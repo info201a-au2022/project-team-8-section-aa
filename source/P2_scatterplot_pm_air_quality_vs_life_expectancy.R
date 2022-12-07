@@ -3,7 +3,7 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2)
 library(ggrepel)
-air_pollution_life_expect <- read.csv("../data/air pollution life expectancy.csv")
+air_pollution_life_expect <- read.csv("../project-team-8-section-aa/data/air pollution life expectancy.csv")
 
 #Code for scatter plot
 

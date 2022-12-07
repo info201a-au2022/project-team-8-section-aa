@@ -3,10 +3,10 @@ library(dplyr)
 library(tidyverse)
 
 #Datasets
-life_expectancy <- read.csv("../data/Life Expectancy Data.csv")
-air_pollution <- read.csv("../data/Air Pollution.csv")
-global_air_pollution <- read.csv("../data/global air pollution dataset.csv")
-air_pollution_life_expect <- read.csv("../data/air pollution life expectancy.csv")
+life_expectancy <- read.csv("../project-team-8-section-aa/data/Life Expectancy Data.csv")
+air_pollution <- read.csv("../project-team-8-section-aa/data/Air Pollution.csv")
+global_air_pollution <- read.csv("../project-team-8-section-aa/data/global air pollution dataset.csv")
+air_pollution_life_expect <- read.csv("../project-team-8-section-aa/data/air pollution life expectancy.csv")
 
 summary_info <- list()
 
@@ -40,21 +40,5 @@ summary_info$highest_pm2.5 <- air_pollution_life_expect %>%
   filter(PM2.5.AQI.Value == max(PM2.5.AQI.Value)) %>% 
   pull(Country)
 
-#Make a data frame with life expectancy and AQI
-air_pollution_countries <- read.csv("../data/global air pollution dataset.csv")
-air_pollution_countries2 <- air_pollution_countries[!duplicated(group_countries$Country),]
-air_pollution_no_cities <- air_pollution_countries2[,-2]
-air_pollution_no_cities_no_duups <- air_pollution_no_cities[!duplicated(air_pollution_no_cities$Country),]
-View(air_pollution_no_cities_no_duups)
 
-life_expectancy_2015 <- life_expectancy %>%
-  filter(Year == "2015")
-
-life_expectancy_2015_semiclean <- life_expectancy_2015[,-6:-17]
-life_expectancy_2015_clean <- life_expectancy_2015_semiclean[,-7:-10]
-
-#The Key Dataframe that has the AQI and Life Expectancy of Countries 2015
-air_pollution_life_expect <- merge(life_expectancy_2015_clean, air_pollution_no_cities_no_duups, by=c("Country"))
-
-write.csv(air_pollution_life_expect, "../data/air pollution life expectancy.csv", row.names = TRUE)
 
